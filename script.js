@@ -7,7 +7,13 @@ let gridSize = 16;
 createGrid(gridSize);
 
 button.addEventListener("click", () => {
-    gridSize = prompt("Grid row size: ")
+    while(true) {
+        gridSize = prompt("Grid row size (max: 100):")
+        if(gridSize > 0 && gridSize <= 100) {
+            break;
+        }
+    }
+    
     grid.remove();
     grid = document.createElement("div");
     grid.classList.add("container");
@@ -26,7 +32,6 @@ function createGrid(size) {
         // Calculate square size with formula
         //      padding = container width / gridSize / 2
         //      divide by 2 because padding is set to both sides
-    
         squareDiv.style.padding = `calc(32vw / ${size} / 2)`;
     
         grid.appendChild(squareDiv);
