@@ -13,10 +13,12 @@ div.container {
     width: 32vw;
     height: 32vw;
     border: solid 1px #000000;
+    background-color: #000000;
 }
 
 div.grid {
     margin: 0;
+    opacity: 1;
 }
 
 button {

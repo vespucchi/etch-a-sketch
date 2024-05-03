@@ -41,7 +41,28 @@ function createGrid(size) {
     squares = document.querySelectorAll(".grid");
     squares.forEach((square) => {
         square.addEventListener("mouseenter", () => {
-            square.style.backgroundColor = "black";
+            let squareCompStyle = window.getComputedStyle(square);
+            console.log(squareCompStyle.backgroundColor);
+
+            square.style.opacity = (squareCompStyle.backgroundColor ===
+                 "rgba(0, 0, 0, 0)") ? 
+                 '1' : 
+                 `${squareCompStyle.opacity - 0.1}`;
+                 
+            square.style.backgroundColor = getRandomColor();
         })
     })
+}
+
+
+// Extra: get random color for coloring effect
+// https://stackoverflow.com/questions/1484506/random-color-generator
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
 }
