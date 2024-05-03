@@ -42,13 +42,12 @@ function createGrid(size) {
     squares.forEach((square) => {
         square.addEventListener("mouseenter", () => {
             let squareCompStyle = window.getComputedStyle(square);
-            console.log(squareCompStyle.backgroundColor);
 
             square.style.opacity = (squareCompStyle.backgroundColor ===
                  "rgba(0, 0, 0, 0)") ? 
                  '1' : 
                  `${squareCompStyle.opacity - 0.1}`;
-                 
+
             square.style.backgroundColor = getRandomColor();
         })
     })
