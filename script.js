@@ -15,3 +15,12 @@ for(let i = 0; i < gridSize * gridSize; i++) {
 
     grid.appendChild(squareDiv);
 }
+
+
+// Coloring effect by hovering
+let squares = document.querySelectorAll(".grid");
+squares.forEach((square) => {
+    square.addEventListener("mouseenter", () => {
+        square.style.backgroundColor = "black";
+    })
+})
