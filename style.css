@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+}
+
+div.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 32vw;
+    height: 32vw;
+    border: solid 1px #000000;
+}
+
+div.grid {
+    margin: 0;
+}
+
